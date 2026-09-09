@@ -1,0 +1,133 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  --spacing-navbar: 4.5rem;
+
+  --color-primary-50: #f7f7f8;
+  --color-primary-100: #ededf0;
+  --color-primary-200: #d5d5dc;
+  --color-primary-300: #b0b0bd;
+  --color-primary-400: #858598;
+  --color-primary-500: #66667a;
+  --color-primary-600: #515163;
+  --color-primary-700: #434351;
+  --color-primary-800: #3a3a45;
+  --color-primary-900: #18181b;
+  --color-primary-950: #0c0c0e;
+
+--color-accent-50: #E8EDF5;
+--color-accent-100: #C5D0E6;
+--color-accent-200: #9EB3D4;
+--color-accent-300: #7896C2;
+--color-accent-400: #5B7FB5;
+--color-accent-500: #3E68A8;
+--color-accent-600: #2D5088;
+--color-accent-700: #1E3A6A;
+--color-accent-800: #122650;
+--color-accent-900: #0A1A3A;
+--color-accent-950: #050F1F;
+
+  --color-warm-50: #fffbeb;
+  --color-warm-100: #fef3c7;
+  --color-warm-200: #fde68a;
+  --color-warm-300: #fcd34d;
+  --color-warm-400: #fbbf24;
+  --color-warm-500: #f59e0b;
+  --color-warm-600: #d97706;
+  --color-warm-700: #b45309;
+  --color-warm-800: #92400e;
+  --color-warm-900: #78350f;
+  --color-warm-950: #451a03;
+
+  --color-cool-50: #eff6ff;
+  --color-cool-100: #dbeafe;
+  --color-cool-200: #bfdbfe;
+  --color-cool-300: #93c5fd;
+  --color-cool-400: #60a5fa;
+  --color-cool-500: #3b82f6;
+  --color-cool-600: #2563eb;
+  --color-cool-700: #1d4ed8;
+  --color-cool-800: #1e40af;
+  --color-cool-900: #1e3a8a;
+  --color-cool-950: #172554;
+
+  --color-surface: #ffffff;
+  --color-surface-alt: #f8f9fa;
+  --color-surface-dark: #111113;
+
+  --shadow-card: 0 1px 3px rgba(0,0,0,0.04), 0 8px 32px rgba(0,0,0,0.04);
+  --shadow-card-hover: 0 4px 16px rgba(0,0,0,0.06), 0 20px 60px rgba(0,0,0,0.06);
+  --shadow-glass: 0 4px 24px rgba(0,0,0,0.04), inset 0 1px 0 rgba(255,255,255,0.1);
+  --shadow-glow-accent: 0 0 20px rgba(34,197,94,0.15), 0 0 60px rgba(34,197,94,0.06);
+  --shadow-glow-primary: 0 0 20px rgba(24,24,27,0.2), 0 0 60px rgba(24,24,27,0.06);
+
+  --spacing-section-py: clamp(5rem, 8vw, 8rem);
+  --spacing-card-padding-y: clamp(1.75rem, 3.5vw, 2.5rem);
+  --spacing-card-padding-x: clamp(1.75rem, 3.5vw, 2.5rem);
+  --spacing-card-gap: clamp(1.75rem, 3vw, 2.5rem);
+  --spacing-section-title-mb: clamp(3rem, 5vw, 5rem);
+  --spacing-gallery-gap: clamp(1rem, 2vw, 1.5rem);
+}
+
+/* === Responsive navbar offset === */
+@media (min-width: 1024px) {
+  :root {
+    --spacing-navbar: 5rem;
+  }
+}
+
+
+/* === Reduced Motion === */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* === Styles de base : DOIVENT être dans @layer base pour ne pas bloquer les utilitaires === */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--color-surface);
+    color: var(--color-primary-900);
+    line-height: 1.65;
+  }
+
+  p {
+    line-height: 1.65;
+  }
+
+  ::selection {
+    background-color: var(--color-primary-900);
+    color: white;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--color-surface-alt);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-primary-300);
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-primary-400);
+  }
+}
