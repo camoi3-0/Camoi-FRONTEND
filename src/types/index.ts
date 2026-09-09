@@ -73,3 +73,9 @@ export interface FAQ {
   question: string
   answer: string
 }
+
+export interface Testimonial {
+  id: string
+  quote: string
+  highlight?: boolean
+}
